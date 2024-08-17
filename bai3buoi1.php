@@ -1,53 +1,42 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phép Toán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
+    <?php
+        $a = 3;
+        $b = 4;
+        $c = 10;
+        $songuyento = true;
+        $d = 0;
+        echo "a + b = " . $a+$b ."<br>"; 
+        echo "a - b = " . $a-$b ."<br>";
+        echo "a * b = " . $a*$b ."<br>";
+        echo "a / b = " . $a/$b ."<br>";
+        if ($c < 0 ) {
+            return $songuyento = false;
+        }
 
-<?php
-function tinh_phep_toan($so1, $so2, $operation) {
-    switch ($operation) {
-        case 'Cộng':
-            return $so1 + $so2;
-        case 'Trừ':
-            return $so1 - $so2;
-        case 'Nhân':
-            return $so1 * $so2;
-        case 'Chia':
-            return $so2 != 0 ? $so1 / $so2 : "Không thể chia cho 0!";
-    }
-}
+        for ($i = 2; $i < sqrt($c); $i++) {
+            if ($c % $i == 0) {
+                $isPrime = false;
+                break;
+            }
+        }
 
-$so_a = 4;
-$so_b = 5;
-$ket_qua = "";
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $operation = $_POST['operation'];
-    $ket_qua = tinh_phep_toan($so_a, $so_b, $operation);
-}
-
-?>
-
-
-<form method="post">
-    Các phép toán giữa số 4 và 5 là:<br><br>
-    Chọn phép toán:
-    <input type="radio" name="operation" value="Cộng" required> Cộng
-    <input type="radio" name="operation" value="Trừ"> Trừ
-    <input type="radio" name="operation" value="Nhân"> Nhân
-    <input type="radio" name="operation" value="Chia"> Chia
-    <br><br>
-    <input type="submit" value="Tính toán">
-</form>
-
-<?php
-if ($ket_qua !== "") {
-    echo "<h3>Kết quả: $ket_qua</h3>";
-}
-?>
-
+        if ($isPrime == false) {
+            echo "$c khong phai so nguyen to <br>"; 
+        } else {
+            echo "$c la so nguyen to <br>";
+        }
+        if ($d % 2 == 0){
+            echo "$d la so chan <br>";
+        } else {
+            echo "$d la so le <br>";
+        }
+    ?>
 </body>
 </html>
