@@ -1,42 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Phép tính trên hai số</title>
 </head>
 <body>
-    <?php
-        $a = 3;
-        $b = 4;
-        $c = 10;
-        $songuyento = true;
-        $d = 0;
-        echo "a + b = " . $a+$b ."<br>"; 
-        echo "a - b = " . $a-$b ."<br>";
-        echo "a * b = " . $a*$b ."<br>";
-        echo "a / b = " . $a/$b ."<br>";
-        if ($c < 0 ) {
-            return $songuyento = false;
-        }
+    <h2>PHÉP TÍNH TRÊN HAI SỐ</h2>
+            <form method="post" action="">
+            <label>Chọn phép tính:</label>
+            <input type="radio" name="operation" value="cong" required> Cộng
+            <input type="radio" name="operation" value="tru" required> Trừ
+            <input type="radio" name="operation" value="nhan" required> Nhân
+            <input type="radio" name="operation" value="chia" required> Chia
+            <input type="radio" name="operation" value="nguyento" required> Kiểm tra nguyên tố
+            <input type="radio" name="operation" value="chanle" required> Kiểm tra chẵn/lẻ
+            <br><br>
 
-        for ($i = 2; $i < sqrt($c); $i++) {
-            if ($c % $i == 0) {
-                $isPrime = false;
-                break;
-            }
-        }
+            <label>Số thứ nhất:</label>
+            <input type="number" name="soThuNhat" required>
+            <br><br>
 
-        if ($isPrime == false) {
-            echo "$c khong phai so nguyen to <br>"; 
-        } else {
-            echo "$c la so nguyen to <br>";
-        }
-        if ($d % 2 == 0){
-            echo "$d la so chan <br>";
-        } else {
-            echo "$d la so le <br>";
-        }
-    ?>
-</body>
+            <label>Số thứ hai:</label>
+            <input type="number" name="soThuHai" required>
+            <br><br>
+
+            <input type="submit" value="Tính">
+        </form>
+    </body>
 </html>
